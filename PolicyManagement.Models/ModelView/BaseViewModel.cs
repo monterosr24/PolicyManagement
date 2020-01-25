@@ -1,6 +1,6 @@
 ﻿namespace PolicyManagement.Models.ModelView
 {
-    public class BaseModelView
+    public class BaseViewModel
     {
         public int Id { get; set; }
     }

@@ -56,12 +56,27 @@
   <ItemGroup>
     <Compile Include="ApplicationDbContext.cs" />
     <Compile Include="ApplicationUser.cs" />
+    <Compile Include="Migrations\202001251612086_AddEntities.cs" />
+    <Compile Include="Migrations\202001251612086_AddEntities.Designer.cs">
+      <DependentUpon>202001251612086_AddEntities.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PolicyManagement.Models\PolicyManagement.Models.csproj">
+      <Project>{F9549F79-62BE-452E-B2D1-73F5F9569A14}</Project>
+      <Name>PolicyManagement.Models</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202001251612086_AddEntities.resx">
+      <DependentUpon>202001251612086_AddEntities.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

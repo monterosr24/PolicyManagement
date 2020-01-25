@@ -62,11 +62,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Mapper\MappingProfile.cs" />
-    <Compile Include="ModelView\BaseModelView.cs" />
-    <Compile Include="ModelView\ClientModelView.cs" />
-    <Compile Include="ModelView\PolicyModelView.cs" />
-    <Compile Include="ModelView\TypeCoveringModelView.cs" />
-    <Compile Include="ModelView\TypeRiskModelView.cs" />
+    <Compile Include="ModelView\BaseViewModel.cs" />
+    <Compile Include="ModelView\ClientViewModel.cs" />
+    <Compile Include="ModelView\PolicyViewModel.cs" />
+    <Compile Include="ModelView\TypeCoveringViewModel.cs" />
+    <Compile Include="ModelView\TypeRiskViewModel.cs" />
     <Compile Include="Model\BaseModel.cs" />
     <Compile Include="Model\Client.cs" />
     <Compile Include="Model\Policy.cs" />
