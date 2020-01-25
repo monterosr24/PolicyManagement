@@ -51,10 +51,14 @@ namespace PolicyManagement.Repository.Interfaces
             dbSet.Remove(entity);
         }
 
-        public IEnumerable<TEntity> GetAll<TEntity>(Expression<Func<TEntity, bool>> predicate) where TEntity : BaseModel
+        public IEnumerable<TEntity> GetAll<TEntity>() where TEntity : BaseModel
         {
-            var dbSet = _context.Set<TEntity>();
-            return dbSet.Where(predicate).ToList();
+            return _context.Set<TEntity>().ToList();
+        }
+
+        public TEntity GetId<TEntity>(int id) where TEntity : BaseModel
+        {
+            return _context.Set<TEntity>().FirstOrDefault(x => x.Id == id);
         }
 
         public void Save()

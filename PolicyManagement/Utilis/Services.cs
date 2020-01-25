@@ -7,13 +7,12 @@ namespace PolicyManagement.Utilis
 {
     public static class Services
     {
-        public static void RefistreServices<T>(NinjectResolver<T> ninjectResolver) 
+        public static void RegistreServices<T>(NinjectResolver<T> ninjectResolver) 
             where T: DbContext
         {
             DependencyResolver.SetResolver(ninjectResolver);
             Map();
         }
-
 
         private static void Map()
         {

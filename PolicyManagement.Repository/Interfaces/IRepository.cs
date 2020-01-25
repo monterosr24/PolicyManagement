@@ -1,7 +1,5 @@
 ﻿using PolicyManagement.Models.Model;
-using System;
 using System.Collections.Generic;
-using System.Linq.Expressions;
 using System.Threading.Tasks;
 
 namespace PolicyManagement.Repository.Interfaces
@@ -20,8 +18,11 @@ namespace PolicyManagement.Repository.Interfaces
         void Delete<TEntity>(TEntity entity)
             where TEntity : BaseModel;
 
-        IEnumerable<TEntity> GetAll<TEntity>(Expression<Func<TEntity, bool>> predicate)
+        IEnumerable<TEntity> GetAll<TEntity>()
            where TEntity : BaseModel;
+
+        TEntity GetId<TEntity>(int id)
+          where TEntity : BaseModel;
 
         void Save();
 
