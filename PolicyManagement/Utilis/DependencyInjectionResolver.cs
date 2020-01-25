@@ -1,5 +1,5 @@
 ﻿using Ninject;
-using PolicyManagement.Models;
+using PolicyManagement.Data;
 
 namespace PolicyManagement.Utilis
 {
