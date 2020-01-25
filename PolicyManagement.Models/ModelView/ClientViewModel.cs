@@ -3,7 +3,7 @@ using PolicyManagement.Models.ModelView;
 
 namespace PolicyManagement.Models.ModelView
 {
-    public class ClientModelView: BaseModelView
+    public class ClientViewModel: BaseViewModel
     {
         public string Name { get; set; }
 

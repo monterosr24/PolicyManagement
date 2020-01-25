@@ -8,10 +8,10 @@ namespace PolicyManagement.Models.Mapper
     {
         public MappingProfile()
         {
-            CreateMap<Client, ClientModelView>().ReverseMap();
-            CreateMap<Policy, PolicyModelView>().ReverseMap();
-            CreateMap<TypeCovering, TypeCoveringModelView>().ReverseMap();
-            CreateMap<TypeRisk, TypeRiskModelView>().ReverseMap();
+            CreateMap<Client, ClientViewModel>().ReverseMap();
+            CreateMap<Policy, PolicyViewModel>().ReverseMap();
+            CreateMap<TypeCovering, TypeCoveringViewModel>().ReverseMap();
+            CreateMap<TypeRisk, TypeRiskViewModel>().ReverseMap();
         }
     }
 }

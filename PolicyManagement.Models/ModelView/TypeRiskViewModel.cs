@@ -1,6 +1,6 @@
 ﻿namespace PolicyManagement.Models.ModelView
 {
-    public class TypeRiskModelView: BaseModelView
+    public class TypeRiskViewModel: BaseViewModel
     {
         public string Type { get; set; }
 

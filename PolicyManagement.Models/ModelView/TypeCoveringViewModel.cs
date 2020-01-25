@@ -1,7 +1,7 @@
 ﻿
 namespace PolicyManagement.Models.ModelView
 {
-    public class TypeCoveringModelView: BaseModelView
+    public class TypeCoveringViewModel: BaseViewModel
     {
         public string Name { get; set; }
 
