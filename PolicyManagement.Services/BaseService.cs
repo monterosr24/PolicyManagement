@@ -13,7 +13,7 @@ namespace PolicyManagement.Services
         private readonly DbContext _context;
         private readonly IRepository _repository;
 
-        public BaseService(DbContext context)
+        protected BaseService(DbContext context)
         {
             _context = context;
             _repository = new Repository<DbContext>(_context);
@@ -30,19 +30,19 @@ namespace PolicyManagement.Services
             return Mapper.Map<TEntity, TEntityModel>(entity);
         }
 
-        public IEnumerable<TEntityModel> GetAll()
+        public virtual IEnumerable<TEntityModel> GetAll()
         {
             var entity = _repository.GetAll<TEntity>();
             return Mapper.Map<IEnumerable<TEntity>, IEnumerable< TEntityModel>>(entity);
         }
 
-        public TEntityModel GetId(int id)
+        public virtual TEntityModel GetId(int id)
         {
             var entity = _repository.GetId<TEntity>(id);
             return Mapper.Map<TEntity, TEntityModel>(entity);
         }
 
-        public TEntityModel Update(int id, TEntityModel toUpdate, string user)
+        public virtual TEntityModel Update(int id, TEntityModel toUpdate, string user)
         {
             var entity = _repository.GetId<TEntity>(id);
 
