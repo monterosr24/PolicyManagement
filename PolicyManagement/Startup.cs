@@ -2,7 +2,6 @@
 using Ninject;
 using Owin;
 using PolicyManagement.Utilis;
-using System.Web.Mvc;
 
 [assembly: OwinStartupAttribute(typeof(PolicyManagement.Startup))]
 namespace PolicyManagement
@@ -16,9 +15,7 @@ namespace PolicyManagement
 
         private static void RegisterServices(IKernel kernel)
         {
-            DependencyResolver.SetResolver(
-                new DependencyInjectionResolver(kernel)
-            );
+            Services.RegistreServices(new DependencyInjectionResolver(kernel));
         }
 
     }
