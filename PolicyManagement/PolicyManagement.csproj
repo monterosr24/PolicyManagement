@@ -237,6 +237,8 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\api\BaseApiController.cs" />
+    <Compile Include="Controllers\api\PolicyController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Global.asax.cs">
@@ -246,8 +248,11 @@
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="Utilis\DependencyInjection.cs" />
     <Compile Include="Utilis\DependencyInjectionResolver.cs" />
+    <Compile Include="Utilis\JsonContent.cs" />
     <Compile Include="Utilis\NinjectResolver.cs" />
+    <Compile Include="Utilis\OkJsonPathResult.cs" />
     <Compile Include="Utilis\ServicesResolver.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -312,6 +317,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Policy\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -334,6 +340,10 @@
     <ProjectReference Include="..\PolicyManagement.Models\PolicyManagement.Models.csproj">
       <Project>{F9549F79-62BE-452E-B2D1-73F5F9569A14}</Project>
       <Name>PolicyManagement.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PolicyManagement.Repository\PolicyManagement.Repository.csproj">
+      <Project>{3E870832-8241-4444-847B-0534107A1EF3}</Project>
+      <Name>PolicyManagement.Repository</Name>
     </ProjectReference>
     <ProjectReference Include="..\PolicyManagement.Services\PolicyManagement.Services.csproj">
       <Project>{E87FBFAA-D0EF-4433-88F1-CB186469C601}</Project>
