@@ -60,9 +60,9 @@
     <Compile Include="Migrations\202001251612086_AddEntities.Designer.cs">
       <DependentUpon>202001251612086_AddEntities.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202001252006053_AddRelationBetweenClientPolicy.cs" />
-    <Compile Include="Migrations\202001252006053_AddRelationBetweenClientPolicy.Designer.cs">
-      <DependentUpon>202001252006053_AddRelationBetweenClientPolicy.cs</DependentUpon>
+    <Compile Include="Migrations\202001252114446_AddRelationManyToManyClientPolicy.cs" />
+    <Compile Include="Migrations\202001252114446_AddRelationManyToManyClientPolicy.Designer.cs">
+      <DependentUpon>202001252114446_AddRelationManyToManyClientPolicy.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -81,8 +81,8 @@
     <EmbeddedResource Include="Migrations\202001251612086_AddEntities.resx">
       <DependentUpon>202001251612086_AddEntities.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202001252006053_AddRelationBetweenClientPolicy.resx">
-      <DependentUpon>202001252006053_AddRelationBetweenClientPolicy.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202001252114446_AddRelationManyToManyClientPolicy.resx">
+      <DependentUpon>202001252114446_AddRelationManyToManyClientPolicy.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

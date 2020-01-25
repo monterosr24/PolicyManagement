@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -31,7 +32,6 @@ namespace PolicyManagement.Models.Model
         public virtual TypeCovering TypeCovering { get; set; }
         public virtual TypeRisk TypeRisk { get; set; }
 
-        public virtual Client Client { get; set; }
-
+        
     }
 }

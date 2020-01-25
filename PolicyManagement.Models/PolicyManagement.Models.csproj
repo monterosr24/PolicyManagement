@@ -69,6 +69,7 @@
     <Compile Include="ModelView\TypeRiskViewModel.cs" />
     <Compile Include="Model\BaseModel.cs" />
     <Compile Include="Model\Client.cs" />
+    <Compile Include="Model\ClientPolicy.cs" />
     <Compile Include="Model\Policy.cs" />
     <Compile Include="Model\TypeCovering.cs" />
     <Compile Include="Model\TypeRisk.cs" />
