@@ -1,4 +1,7 @@
 ﻿using Ninject;
+using Ninject.Web.Common;
+using PolicyManagement.Services;
+using PolicyManagement.Services.Interface;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -9,11 +12,13 @@ namespace PolicyManagement.Utilis
     public abstract class NinjectResolver<TDbContext> : IDependencyResolver
         where TDbContext : DbContext
     {
-        private IKernel _kernel;
+        private readonly IKernel _kernel;
 
-        public NinjectResolver(IKernel kernel)
+        public NinjectResolver()
         {
-            _kernel = kernel;
+            _kernel = new StandardKernel();
+            _kernel.Bind<DbContext>().To<TDbContext>().InRequestScope();
+
             AddBindings();
         }
         public object GetService(Type serviceType)
@@ -28,8 +33,7 @@ namespace PolicyManagement.Utilis
 
         private void AddBindings()
         {
-            // Añadir los binds aquí.
-            //_kernel.Bind<IMiInterface>().To(MiClaseDerivada)();
+            _kernel.Bind<IPolicyService>().To<PolicyService>().InRequestScope();
         }
     }
 }

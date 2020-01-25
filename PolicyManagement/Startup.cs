@@ -15,7 +15,7 @@ namespace PolicyManagement
 
         private static void RegisterServices(IKernel kernel)
         {
-            Services.RegistreServices(new DependencyInjectionResolver(kernel));
+            ServicesResolver.RegistreServices(new DependencyInjectionResolver(kernel));
         }
 
     }

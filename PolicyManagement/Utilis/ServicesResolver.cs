@@ -5,7 +5,7 @@ using System.Web.Mvc;
 
 namespace PolicyManagement.Utilis
 {
-    public static class Services
+    public static class ServicesResolver
     {
         public static void RegistreServices<T>(NinjectResolver<T> ninjectResolver) 
             where T: DbContext
