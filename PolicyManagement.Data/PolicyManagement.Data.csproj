@@ -60,6 +60,10 @@
     <Compile Include="Migrations\202001251612086_AddEntities.Designer.cs">
       <DependentUpon>202001251612086_AddEntities.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202001252006053_AddRelationBetweenClientPolicy.cs" />
+    <Compile Include="Migrations\202001252006053_AddRelationBetweenClientPolicy.Designer.cs">
+      <DependentUpon>202001252006053_AddRelationBetweenClientPolicy.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -76,6 +80,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202001251612086_AddEntities.resx">
       <DependentUpon>202001251612086_AddEntities.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001252006053_AddRelationBetweenClientPolicy.resx">
+      <DependentUpon>202001252006053_AddRelationBetweenClientPolicy.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

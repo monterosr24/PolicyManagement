@@ -23,9 +23,9 @@ namespace PolicyManagement.Data.Migrations
             context.TypeCovering.AddOrUpdate(new TypeCovering() { Id = 4, Name = "Pérdida,", Percentage = 20, CreatedDate = DateTime.Now, CreatedUser = "Admin" });
 
             context.TypeRisk.AddOrUpdate(new TypeRisk() { Id = 1, Type = "Bajo", Description = "Poliza de riesgo baja", CreatedDate = DateTime.Now, CreatedUser = "Admin" });
-            context.TypeRisk.AddOrUpdate(new TypeRisk() { Id = 1, Type = "Medio,", Description = "Poliza de riesgo medio,", CreatedDate = DateTime.Now, CreatedUser = "Admin" });
-            context.TypeRisk.AddOrUpdate(new TypeRisk() { Id = 1, Type = "Medio Alto", Description = "Poliza de riesgo media-alta", CreatedDate = DateTime.Now, CreatedUser = "Admin" });
-            context.TypeRisk.AddOrUpdate(new TypeRisk() { Id = 1, Type = "Alto", Description = "Poliza de riesgo alto", CreatedDate = DateTime.Now, CreatedUser = "Admin" });
+            context.TypeRisk.AddOrUpdate(new TypeRisk() { Id = 2, Type = "Medio,", Description = "Poliza de riesgo medio,", CreatedDate = DateTime.Now, CreatedUser = "Admin" });
+            context.TypeRisk.AddOrUpdate(new TypeRisk() { Id = 3, Type = "Medio Alto", Description = "Poliza de riesgo media-alta", CreatedDate = DateTime.Now, CreatedUser = "Admin" });
+            context.TypeRisk.AddOrUpdate(new TypeRisk() { Id = 4, Type = "Alto", Description = "Poliza de riesgo alto", CreatedDate = DateTime.Now, CreatedUser = "Admin" });
         }
     }
 }
