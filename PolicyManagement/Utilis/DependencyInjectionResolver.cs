@@ -1,0 +1,12 @@
+﻿using Ninject;
+using PolicyManagement.Models;
+
+namespace PolicyManagement.Utilis
+{
+    public class DependencyInjectionResolver : NinjectResolver<ApplicationDbContext>
+    {
+        public DependencyInjectionResolver(IKernel kernel) : base(kernel)
+        {
+        }
+    }
+}

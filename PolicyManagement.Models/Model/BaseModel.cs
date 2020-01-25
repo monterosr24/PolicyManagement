@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace PolicyManagement.Models.Model
 {
-    public class BaseModel
+    public abstract class BaseModel
     {
         [Key]
         public int Id { get; set; }

@@ -1,5 +1,8 @@
 ﻿using Microsoft.Owin;
+using Ninject;
 using Owin;
+using PolicyManagement.Utilis;
+using System.Web.Mvc;
 
 [assembly: OwinStartupAttribute(typeof(PolicyManagement.Startup))]
 namespace PolicyManagement
@@ -10,5 +13,13 @@ namespace PolicyManagement
         {
             ConfigureAuth(app);
         }
+
+        private static void RegisterServices(IKernel kernel)
+        {
+            DependencyResolver.SetResolver(
+                new DependencyInjectionResolver(kernel)
+            );
+        }
+
     }
 }
