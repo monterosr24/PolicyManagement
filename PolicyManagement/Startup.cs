@@ -12,11 +12,5 @@ namespace PolicyManagement
         {
             ConfigureAuth(app);
         }
-
-        private static void RegisterServices(IKernel kernel)
-        {
-            ServicesResolver.RegistreServices(new DependencyInjectionResolver(kernel));
-        }
-
     }
 }

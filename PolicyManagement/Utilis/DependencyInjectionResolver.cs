@@ -5,7 +5,7 @@ namespace PolicyManagement.Utilis
 {
     public class DependencyInjectionResolver : NinjectResolver<ApplicationDbContext>
     {
-        public DependencyInjectionResolver(IKernel kernel) : base()
+        public DependencyInjectionResolver() : base()
         {
         }
     }

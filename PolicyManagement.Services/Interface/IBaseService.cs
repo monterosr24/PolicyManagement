@@ -7,5 +7,6 @@ namespace PolicyManagement.Services.Interface
         IEnumerable<TEntityModel> GetAll();
         TEntityModel Create(TEntityModel toInsert, string user);
         TEntityModel Update(int id, TEntityModel toUpdate, string user);
+        void Delete(object id);
     }
 }

@@ -30,6 +30,12 @@ namespace PolicyManagement.Services
             return Mapper.Map<TEntity, TEntityModel>(entity);
         }
 
+        public void Delete(object id)
+        {
+            _repository.Delete<TEntity>(id);
+            _repository.Save();
+        }
+
         public virtual IEnumerable<TEntityModel> GetAll()
         {
             var entity = _repository.GetAll<TEntity>();
