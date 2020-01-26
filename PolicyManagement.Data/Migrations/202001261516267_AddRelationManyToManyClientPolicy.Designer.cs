@@ -13,7 +13,7 @@ namespace PolicyManagement.Data.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "202001252114446_AddRelationManyToManyClientPolicy"; }
+            get { return "202001261516267_AddRelationManyToManyClientPolicy"; }
         }
         
         string IMigrationMetadata.Source

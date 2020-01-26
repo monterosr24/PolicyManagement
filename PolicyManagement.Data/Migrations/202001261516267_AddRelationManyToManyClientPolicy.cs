@@ -7,10 +7,6 @@ namespace PolicyManagement.Data.Migrations
     {
         public override void Up()
         {
-            DropForeignKey("dbo.Client", "Client_Id", "dbo.Client");
-            DropForeignKey("dbo.Policy", "Policy_Id", "dbo.Policy");
-            DropIndex("dbo.Client", new[] { "Client_Id" });
-            DropIndex("dbo.Policy", new[] { "Policy_Id" });
             CreateTable(
                 "dbo.ClientPolicy",
                 c => new
@@ -29,23 +25,15 @@ namespace PolicyManagement.Data.Migrations
                 .Index(t => t.ClientId)
                 .Index(t => t.PolicyId);
             
-            DropColumn("dbo.Client", "Client_Id");
-            DropColumn("dbo.Policy", "Policy_Id");
         }
         
         public override void Down()
         {
-            AddColumn("dbo.Policy", "Policy_Id", c => c.Int());
-            AddColumn("dbo.Client", "Client_Id", c => c.Int());
             DropForeignKey("dbo.ClientPolicy", "PolicyId", "dbo.Policy");
             DropForeignKey("dbo.ClientPolicy", "ClientId", "dbo.Client");
             DropIndex("dbo.ClientPolicy", new[] { "PolicyId" });
             DropIndex("dbo.ClientPolicy", new[] { "ClientId" });
             DropTable("dbo.ClientPolicy");
-            CreateIndex("dbo.Policy", "Policy_Id");
-            CreateIndex("dbo.Client", "Client_Id");
-            AddForeignKey("dbo.Policy", "Policy_Id", "dbo.Policy", "Id");
-            AddForeignKey("dbo.Client", "Client_Id", "dbo.Client", "Id");
         }
     }
 }
