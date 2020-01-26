@@ -35,6 +35,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AutoMapper, Version=5.2.0.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.5.2.0\lib\net45\AutoMapper.dll</HintPath>
+    </Reference>
     <Reference Include="Effort, Version=2.2.7.0, Culture=neutral, PublicKeyToken=6a46696d54971e6d, processorArchitecture=MSIL">
       <HintPath>..\packages\Effort.EF6.2.2.7\lib\net45\Effort.dll</HintPath>
     </Reference>
@@ -108,6 +111,8 @@
   <ItemGroup>
     <Compile Include="PolicyManagement.Data\BaseTest.cs" />
     <Compile Include="PolicyManagement.Data\ClientPoliciesDbContextTest.cs" />
+    <Compile Include="PolicyManagement.Services\BaseTestService.cs" />
+    <Compile Include="PolicyManagement.Services\PolicyServiceTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Controllers\HomeControllerTest.cs" />
   </ItemGroup>
@@ -125,6 +130,10 @@
     <ProjectReference Include="..\PolicyManagement.Models\PolicyManagement.Models.csproj">
       <Project>{F9549F79-62BE-452E-B2D1-73F5F9569A14}</Project>
       <Name>PolicyManagement.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PolicyManagement.Services\PolicyManagement.Services.csproj">
+      <Project>{E87FBFAA-D0EF-4433-88F1-CB186469C601}</Project>
+      <Name>PolicyManagement.Services</Name>
     </ProjectReference>
     <ProjectReference Include="..\PolicyManagement\PolicyManagement.csproj">
       <Project>{55088628-6F41-47FB-8765-BF43BAA6C485}</Project>
