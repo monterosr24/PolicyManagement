@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Data.Entity;
 using PolicyManagement.Common;
 using PolicyManagement.Models.Model;
@@ -21,6 +22,7 @@ namespace PolicyManagement.Services
             if (typeRisk.Type == Constants.TypeRiskNames.hight && typeCovering.Percentage > 50)
             {
                 return null;
+                //throw new Exception("errot ");
             }
 
             return base.Create(toInsert, user);
