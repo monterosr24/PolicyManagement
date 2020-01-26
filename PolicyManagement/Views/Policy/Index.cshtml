@@ -63,10 +63,34 @@
                 <td>
                     @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
                     @Html.ActionLink("Details", "Details", new { id = item.Id }) |
-                    @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                    <a class="DeletePolicy" data-policy-id="@($"{item.Id}")">Delete</a>
                 </td>
             </tr>
         }
     }
 
 </table>
+
+@section Scripts
+{
+    <script type="text/javascript">
+        $(function () {
+            $(".DeletePolicy").click(function () {
+                var opcion = confirm("Desea eliminar la póliza");
+                if (opcion == true) {
+                    $.ajax({
+                        type: "Delete",
+                        url: `/api/policy/${this.dataset.policyId}`,
+                        success: function () {
+                            alert("Se eliminó correctamente la póliza");
+                            location.reload();
+                        },
+                        error: function (e) {
+                            alert(e.responseJSON.Message);
+                        }
+                    });
+                }
+            });
+        });
+    </script>
+}

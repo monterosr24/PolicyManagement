@@ -1,4 +1,5 @@
 ﻿using PolicyManagement.Models.ModelView;
+using PolicyManagement.Services.Interface;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,12 +11,16 @@ namespace PolicyManagement.Controllers
 {
     public class PolicyController : Controller
     {
+        private IPolicyService policyService;
+
+        public PolicyController(IPolicyService service)
+        {
+            policyService = service;
+        }
         // GET: Policy
         public ActionResult Index()
         {
-            var client = new HttpClient();
-            var response = client.GetAsync("http://localhost:49995/api/policy/").Result;
-            var policy = response.Content.ReadAsAsync<IEnumerable<PolicyViewModel>>().Result;
+            var policy =  policyService.GetAll();
             return View(policy);
         }
 
