@@ -37,5 +37,15 @@ namespace PolicyManagement.Tests.PolicyManagement.Services
 
         }
 
+        [TestMethod]
+        public void CreatePolicy()
+        {
+            var policy = new PolicyViewModel { Name = "Poliza 1", Description = "Son pruebas", IdTypeCovering = 1, IdTypeRisk = 2, StartPolicy = DateTime.Now, Period = 2, Price = 1000 };
+            policy = policyService.Create(policy, "Admin");
+
+            Assert.IsNotNull(policy);
+
+        }
+
     }
 }
