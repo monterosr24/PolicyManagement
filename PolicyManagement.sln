@@ -5,8 +5,6 @@ VisualStudioVersion = 15.0.28010.2046
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PolicyManagement", "PolicyManagement\PolicyManagement.csproj", "{55088628-6F41-47FB-8765-BF43BAA6C485}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PolicyManagement.Tests", "PolicyManagement.Tests\PolicyManagement.Tests.csproj", "{F4F32843-20A5-422B-AE87-4E78C3713B95}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PolicyManagement.Repository", "PolicyManagement.Repository\PolicyManagement.Repository.csproj", "{3E870832-8241-4444-847B-0534107A1EF3}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PolicyManagement.Models", "PolicyManagement.Models\PolicyManagement.Models.csproj", "{F9549F79-62BE-452E-B2D1-73F5F9569A14}"
@@ -27,10 +25,6 @@ Global
 		{55088628-6F41-47FB-8765-BF43BAA6C485}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{55088628-6F41-47FB-8765-BF43BAA6C485}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{55088628-6F41-47FB-8765-BF43BAA6C485}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F4F32843-20A5-422B-AE87-4E78C3713B95}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F4F32843-20A5-422B-AE87-4E78C3713B95}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F4F32843-20A5-422B-AE87-4E78C3713B95}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F4F32843-20A5-422B-AE87-4E78C3713B95}.Release|Any CPU.Build.0 = Release|Any CPU
 		{3E870832-8241-4444-847B-0534107A1EF3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{3E870832-8241-4444-847B-0534107A1EF3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3E870832-8241-4444-847B-0534107A1EF3}.Release|Any CPU.ActiveCfg = Release|Any CPU

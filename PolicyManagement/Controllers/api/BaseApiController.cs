@@ -35,7 +35,7 @@ namespace PolicyManagement.Controllers.Api
             return Ok(result);
         }
 
-        public virtual IHttpActionResult GetAll()
+        public virtual IHttpActionResult Get()
         {
             var result = _service.GetAll();
             return Ok(result);
