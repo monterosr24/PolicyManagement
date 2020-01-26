@@ -1,5 +1,7 @@
 ﻿using PolicyManagement.Models.Model;
+using System;
 using System.Collections.Generic;
+using System.Linq.Expressions;
 
 namespace PolicyManagement.Repository.Interfaces
 {
@@ -7,5 +9,9 @@ namespace PolicyManagement.Repository.Interfaces
     {
         IEnumerable<TEntity> GetAll<TEntity>()
           where TEntity : BaseView;
+
+        IEnumerable<TEntity> Get<TEntity>(Expression<Func<TEntity, bool>> predicate)
+             where TEntity : BaseView;
+        object Get<T>(Expression<Func<object, bool>> predicate);
     }
 }

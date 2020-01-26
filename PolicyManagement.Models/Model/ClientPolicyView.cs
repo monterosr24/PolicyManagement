@@ -2,6 +2,8 @@
 {
     public class ClientPolicyView: BaseView
     {
+        public int ClientId { get; set; }
+        public int PolicyId { get; set; }
         public string NameClient { get; set; }
         public string LastName { get; set; }
         public string NamePolicy { get; set; }

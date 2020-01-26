@@ -35,6 +35,7 @@ namespace PolicyManagement.Utilis
         {
             _kernel.Bind<IPolicyService>().To<PolicyService>().InRequestScope();
             _kernel.Bind<IClientService>().To<ClientService>().InRequestScope();
+            _kernel.Bind<IClientPolicyViewService>().To<ClientPolicyViewService>().InRequestScope();
         }
     }
 }
