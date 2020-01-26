@@ -50,7 +50,7 @@ namespace PolicyManagement.Controllers.Api
 
             var result = _service.Create(entityModel, "test");
 
-            return result != null ? Created("", result) : null ;
+            return Created("", result);
         }
 
         public virtual IHttpActionResult Put([FromUri]int id, [FromBody]TEntityModel entityModel)

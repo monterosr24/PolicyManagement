@@ -56,6 +56,8 @@ namespace PolicyManagement.Services
 
             _repository.Update(entity, user);
 
+            _repository.Save();
+
             return Mapper.Map<TEntity, TEntityModel>(entity);
         }
         

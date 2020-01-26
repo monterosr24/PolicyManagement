@@ -1,18 +1,21 @@
 ﻿@model PolicyManagement.Models.ModelView.PolicyViewModel
 
 @{
-    ViewBag.Title = "Crear Póliza";
+    ViewBag.Title = "Edit";
 }
 
+<h2>Edit</h2>
 
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
 
     <div class="form-horizontal">
-        <h4>Formulatio</h4>
+        <h4>PolicyViewModel</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.Id)
+
         <div class="form-group">
             @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
@@ -71,7 +74,7 @@
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="button" value="Create" id="btnSave" class="btn btn-default" />
+                <input id="btnUpdate" type="button" value="Save" class="btn btn-default" />
             </div>
         </div>
     </div>
@@ -81,35 +84,37 @@
     @Html.ActionLink("Back to List", "Index")
 </div>
 
+
 @section Scripts
 {
     <script type="text/javascript">
-        $(function () {  
-            $("#btnSave").click(function () {  
-                var data = {};  
-                data.Name = $("#Name").val();  
-                data.Description = $("#Description").val();  
-                data.StartPolicy = $("#StartPolicy").val();  
-                data.Period = $("#Period").val();  
+        $(function () {
+            $("#btnUpdate").click(function () {
+                var data = {};
+                data.Id = $("#Id").val();
+                data.Name = $("#Name").val();
+                data.Description = $("#Description").val();
+                data.StartPolicy = $("#StartPolicy").val();
+                data.Period = $("#Period").val();
                 data.Price = $("#Price").val();
-                data.IdTypeCovering = $("#IdTypeCovering").val();  
-                data.IdTypeRisk = $("#IdTypeRisk").val();  
-                $.ajax({  
-                    type: "POST",  
-                    url: '/api/policy',  
-                    data: JSON.stringify(data),  
-                    dataType: "json",  
-                    contentType: "application/json; charset=utf-8",  
+                data.IdTypeCovering = $("#IdTypeCovering").val();
+                data.IdTypeRisk = $("#IdTypeRisk").val();
+                $.ajax({
+                    type: "PUT",
+                    url: `/api/policy/${data.Id}`,
+                    data: JSON.stringify(data),
+                    dataType: "json",
+                    contentType: "application/json; charset=utf-8",
                     success: function () {
-                        alert("Se guardo correctamente la póliza");
+                        alert("Se actualizo correctamente la póliza");
                         window.location.href = "/Policy/Index";
-                    },  
+                    },
                     error: function (e) {
-                        alert(e.responseJSON.ExceptionMessage);  
-                    }  
-                });  
-                return false;  
-            });  
+                        alert(e.responseJSON.ExceptionMessage);
+                    }
+                });
+                return false;
+            });
         });
     </script>
 }

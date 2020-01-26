@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data.Entity;
 using PolicyManagement.Common;
 using PolicyManagement.Models.Model;
@@ -16,16 +15,25 @@ namespace PolicyManagement.Services
 
         public override PolicyViewModel Create(PolicyViewModel toInsert, string user)
         {
-            var typeCovering = _repository.GetId<TypeCovering>(toInsert.IdTypeCovering);
-            var typeRisk = _repository.GetId<TypeRisk>(toInsert.IdTypeRisk);
+            ValidatePolicy(toInsert);
+            return base.Create(toInsert, user);
+        }
+
+        public override PolicyViewModel Update(int id, PolicyViewModel toUpdate, string user)
+        {
+            ValidatePolicy(toUpdate);
+            return base.Update(id, toUpdate, user);
+        }
+
+        private void ValidatePolicy(PolicyViewModel policy)
+        {
+            var typeCovering = _repository.GetId<TypeCovering>(policy.IdTypeCovering);
+            var typeRisk = _repository.GetId<TypeRisk>(policy.IdTypeRisk);
 
             if (typeRisk.Type == Constants.TypeRiskNames.hight && typeCovering.Percentage > 50)
             {
-                return null;
-                //throw new Exception("errot ");
+                throw new Exception("La poliza no cumple con la regla de negocio, no puede ser de riesgo alto con un porcentaje mayor al 50% ");
             }
-
-            return base.Create(toInsert, user);
         }
     }
 }

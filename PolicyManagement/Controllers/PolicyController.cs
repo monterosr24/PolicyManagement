@@ -1,10 +1,4 @@
-﻿using PolicyManagement.Models.ModelView;
-using PolicyManagement.Services.Interface;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net.Http;
-using System.Web;
+﻿using PolicyManagement.Services.Interface;
 using System.Web.Mvc;
 
 namespace PolicyManagement.Controllers
@@ -20,14 +14,15 @@ namespace PolicyManagement.Controllers
         // GET: Policy
         public ActionResult Index()
         {
-            var policy =  policyService.GetAll();
-            return View(policy);
+            var policies =  policyService.GetAll();
+            return View(policies);
         }
 
         // GET: Policy/Details/5
         public ActionResult Details(int id)
         {
-            return View();
+            var policy = policyService.GetId(id);
+            return View(policy);
         }
 
         // GET: Policy/Create
@@ -39,7 +34,8 @@ namespace PolicyManagement.Controllers
         // GET: Policy/Edit/5
         public ActionResult Edit(int id)
         {
-            return View();
+            var policy = policyService.GetId(id);
+            return View(policy);
         }
     }
 }
