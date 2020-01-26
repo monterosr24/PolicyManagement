@@ -5,7 +5,7 @@ using PolicyManagement.Services.Interface;
 
 namespace PolicyManagement.Controllers.api
 {
-    public class PolicyController : BaseApiController<Policy, PolicyViewModel, IPolicyService>
+    public class ClientController : BaseApiController<Client, ClientViewModel, IClientService>
     {
     }
 }

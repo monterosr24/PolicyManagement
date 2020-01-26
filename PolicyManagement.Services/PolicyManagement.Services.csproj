@@ -68,7 +68,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BaseService.cs" />
+    <Compile Include="ClientService.cs" />
     <Compile Include="Interface\IBaseService.cs" />
+    <Compile Include="Interface\IClientService.cs" />
     <Compile Include="Interface\IPolicyService.cs" />
     <Compile Include="PolicyService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
