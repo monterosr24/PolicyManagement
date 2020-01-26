@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Effort;
+using PolicyManagement.Common;
 using PolicyManagement.Data;
 using PolicyManagement.Models.Mapper;
 using PolicyManagement.Models.Model;
@@ -30,10 +31,10 @@ namespace PolicyManagement.Tests.PolicyManagement.Services
         {
             var typeRisks = new List<TypeRisk>
             {
-                new TypeRisk() { Type = "Bajo", Description = "Poliza de riesgo baja", CreatedDate = DateTime.Now, CreatedUser = "Admin" },
-                new TypeRisk() { Type = "Medio,", Description = "Poliza de riesgo medio,", CreatedDate = DateTime.Now, CreatedUser = "Admin" },
-                new TypeRisk() { Type = "Medio Alto", Description = "Poliza de riesgo media-alta", CreatedDate = DateTime.Now, CreatedUser = "Admin" },
-                new TypeRisk() { Type = "Alto", Description = "Poliza de riesgo alto", CreatedDate = DateTime.Now, CreatedUser = "Admin" }
+                new TypeRisk() { Type = Constants.TypeRiskNames.low, Description = "Poliza de riesgo baja", CreatedDate = DateTime.Now, CreatedUser = "Admin" },
+                new TypeRisk() { Type = Constants.TypeRiskNames.medium, Description = "Poliza de riesgo medio,", CreatedDate = DateTime.Now, CreatedUser = "Admin" },
+                new TypeRisk() { Type = Constants.TypeRiskNames.mediumHight, Description = "Poliza de riesgo media-alta", CreatedDate = DateTime.Now, CreatedUser = "Admin" },
+                new TypeRisk() { Type = Constants.TypeRiskNames.hight, Description = "Poliza de riesgo alto", CreatedDate = DateTime.Now, CreatedUser = "Admin" }
             };
 
             var typeCovering = new List<TypeCovering>

@@ -1,5 +1,6 @@
 namespace PolicyManagement.Data.Migrations
 {
+    using PolicyManagement.Common;
     using PolicyManagement.Models.Model;
     using System;
     using System.Data.Entity.Migrations;
@@ -22,10 +23,10 @@ namespace PolicyManagement.Data.Migrations
             context.TypeCovering.AddOrUpdate(new TypeCovering() { Id = 3, Name = "Robo,", Percentage = 50, CreatedDate = DateTime.Now, CreatedUser = "Admin" });
             context.TypeCovering.AddOrUpdate(new TypeCovering() { Id = 4, Name = "Pérdida,", Percentage = 20, CreatedDate = DateTime.Now, CreatedUser = "Admin" });
 
-            context.TypeRisk.AddOrUpdate(new TypeRisk() { Id = 1, Type = "Bajo", Description = "Poliza de riesgo baja", CreatedDate = DateTime.Now, CreatedUser = "Admin" });
-            context.TypeRisk.AddOrUpdate(new TypeRisk() { Id = 2, Type = "Medio,", Description = "Poliza de riesgo medio,", CreatedDate = DateTime.Now, CreatedUser = "Admin" });
-            context.TypeRisk.AddOrUpdate(new TypeRisk() { Id = 3, Type = "Medio Alto", Description = "Poliza de riesgo media-alta", CreatedDate = DateTime.Now, CreatedUser = "Admin" });
-            context.TypeRisk.AddOrUpdate(new TypeRisk() { Id = 4, Type = "Alto", Description = "Poliza de riesgo alto", CreatedDate = DateTime.Now, CreatedUser = "Admin" });
+            context.TypeRisk.AddOrUpdate(new TypeRisk() { Id = 1, Type = Constants.TypeRiskNames.low, Description = "Poliza de riesgo baja", CreatedDate = DateTime.Now, CreatedUser = "Admin" });
+            context.TypeRisk.AddOrUpdate(new TypeRisk() { Id = 2, Type = Constants.TypeRiskNames.medium, Description = "Poliza de riesgo medio,", CreatedDate = DateTime.Now, CreatedUser = "Admin" });
+            context.TypeRisk.AddOrUpdate(new TypeRisk() { Id = 3, Type = Constants.TypeRiskNames.mediumHight, Description = "Poliza de riesgo media-alta", CreatedDate = DateTime.Now, CreatedUser = "Admin" });
+            context.TypeRisk.AddOrUpdate(new TypeRisk() { Id = 4, Type = Constants.TypeRiskNames.hight, Description = "Poliza de riesgo alto", CreatedDate = DateTime.Now, CreatedUser = "Admin" });
         }
     }
 }

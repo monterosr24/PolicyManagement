@@ -11,7 +11,7 @@ namespace PolicyManagement.Services
         where TEntity : BaseModel
     {
         private readonly DbContext _context;
-        private readonly IRepository _repository;
+        protected readonly IRepository _repository;
 
         protected BaseService(DbContext context)
         {

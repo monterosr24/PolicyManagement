@@ -123,6 +123,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\PolicyManagement.Common\PolicyManagement.Common.csproj">
+      <Project>{EF5F175E-B716-4082-AC91-E73AA6194B88}</Project>
+      <Name>PolicyManagement.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\PolicyManagement.Data\PolicyManagement.Data.csproj">
       <Project>{4D35986E-B1AD-46B1-BB6C-4C00D82A9D51}</Project>
       <Name>PolicyManagement.Data</Name>

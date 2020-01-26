@@ -1,4 +1,6 @@
-﻿using System.Data.Entity;
+﻿using System.Collections.Generic;
+using System.Data.Entity;
+using PolicyManagement.Common;
 using PolicyManagement.Models.Model;
 using PolicyManagement.Models.ModelView;
 using PolicyManagement.Services.Interface;
@@ -9,6 +11,19 @@ namespace PolicyManagement.Services
     {
         public PolicyService(DbContext context) : base(context)
         {
+        }
+
+        public override PolicyViewModel Create(PolicyViewModel toInsert, string user)
+        {
+            var typeCovering = _repository.GetId<TypeCovering>(toInsert.IdTypeCovering);
+            var typeRisk = _repository.GetId<TypeRisk>(toInsert.IdTypeRisk);
+
+            if (typeRisk.Type == Constants.TypeRiskNames.hight && typeCovering.Percentage > 50)
+            {
+                return null;
+            }
+
+            return base.Create(toInsert, user);
         }
     }
 }
