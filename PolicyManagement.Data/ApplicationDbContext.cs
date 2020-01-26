@@ -11,7 +11,7 @@ namespace PolicyManagement.Data
         public DbSet<Policy> Policy { get; set; }
         public DbSet<TypeCovering> TypeCovering { get; set; }
         public DbSet<TypeRisk> TypeRisk { get; set; }
-        public DbSet<ClientPolicy> clientPolicies { get; set; }
+        public DbSet<ClientPolicy> ClientPolicies { get; set; }
 
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
