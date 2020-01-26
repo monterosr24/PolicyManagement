@@ -13,6 +13,8 @@ namespace PolicyManagement.Data
         public DbSet<TypeRisk> TypeRisk { get; set; }
         public DbSet<ClientPolicy> ClientPolicies { get; set; }
 
+        public DbSet<ClientPolicyView> ClientPolicyView { get; set; }
+
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {
