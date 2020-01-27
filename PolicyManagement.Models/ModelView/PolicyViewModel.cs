@@ -14,6 +14,7 @@ namespace PolicyManagement.Models.ModelView
 
         [Required]
         [Display(Name = "Inicio de vigencia de la póliza")]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd-MM-yyyy}")]
         public DateTime StartPolicy { get; set; }
 
         [Required]
