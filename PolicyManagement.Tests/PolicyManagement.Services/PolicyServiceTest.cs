@@ -31,10 +31,15 @@ namespace PolicyManagement.Tests.PolicyManagement.Services
         public void ValidatePolicyOfPorcent()
         {
             var policy = new PolicyViewModel { Name = "Poliza 1", Description = "Son pruebas", IdTypeCovering = 1, IdTypeRisk = 4, StartPolicy = DateTime.Now, Period = 2, Price = 1000 };
-            policy = policyService.Create(policy, "Admin");
+            try
+            {
+                policy = policyService.Create(policy, "Admin");
+            }
+            catch (Exception e)
+            {
 
-            Assert.IsNull(policy);
-
+                Assert.AreEqual(e.Message, "La poliza no cumple con la regla de negocio, no puede ser de riesgo alto con un porcentaje mayor al 50% ");
+            }
         }
 
         [TestMethod]
