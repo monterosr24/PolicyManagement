@@ -25,8 +25,12 @@
                     <li>@Html.ActionLink("Inicio", "Index", "Home")</li>
                     <li>@Html.ActionLink("Acerca de", "About", "Home")</li>
                     <li>@Html.ActionLink("Contacto", "Contact", "Home")</li>
-                    <li>@Html.ActionLink("Póliza", "Index", "Policy")</li>
-                    <li>@Html.ActionLink("Clientes", "Index", "Client")</li>
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <li>@Html.ActionLink("Póliza", "Index", "Policy")</li>
+                        <li>@Html.ActionLink("Clientes", "Index", "Client")</li>
+                    }
+
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>

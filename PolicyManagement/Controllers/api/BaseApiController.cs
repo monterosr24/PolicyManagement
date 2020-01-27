@@ -49,7 +49,7 @@ namespace PolicyManagement.Controllers.Api
                 return BadRequest("Model is not valid");
             }
 
-            var result = _service.Create(entityModel, "test");
+            var result = _service.Create(entityModel, RequestContext.Principal.Identity.Name);
 
             return Created("", result);
         }
@@ -60,8 +60,8 @@ namespace PolicyManagement.Controllers.Api
             {
                 return BadRequest("Model is not valid");
             }
-
-            var result = _service.Update(id, entityModel, "");
+            
+            var result = _service.Update(id, entityModel, RequestContext.Principal.Identity.Name);
             return Ok(result);
         }
 
