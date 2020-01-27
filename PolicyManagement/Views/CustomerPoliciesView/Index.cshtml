@@ -76,7 +76,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title">Modal Header</h4>
+                <h4 class="modal-title">Polizas</h4>
             </div>
             <div class="modal-body">
                 <table class="table" id="table-policy">
@@ -97,6 +97,7 @@
                     </tr>
 
                 </table>
+                <p id="mdjWithOutPolicy">No existe ningúna póliza, @Html.ActionLink("registrar una póliza", "Create", "Policy")</p>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -115,7 +116,12 @@
                 type: "Get",
                 url: "/api/policy",
                 success: function (e) {
-                    CreateHtml(e);
+                    if (e.length > 0) {
+                        CreateHtml(e);
+                        return;
+                    }
+                    $("#mdjWithOutPolicy").show();
+                    $("#table-policy").hide();
                 },
                 error: function (e) {
                     alert(e.responseJSON.Message);
@@ -132,22 +138,22 @@
                     clientPolicy.PolicyId = $(this).val()
                     data.push(clientPolicy);
                 });
-
-                $.ajax({
-                    type: "POST",
-                    url: '/api/clientPolicy/list',
-                    data: JSON.stringify(data),
-                    dataType: "json",
-                    contentType: "application/json; charset=utf-8",
-                    success: function () {
-                        alert("Se guardo correctamente la póliza(s) al cliente");
-                        location.reload();
-                    },
-                    error: function (e) {
-                        alert(e.responseJSON.ExceptionMessage);
-                    }
-                });
-
+                if (data.length > 0) {
+                    $.ajax({
+                        type: "POST",
+                        url: '/api/clientPolicy/list',
+                        data: JSON.stringify(data),
+                        dataType: "json",
+                        contentType: "application/json; charset=utf-8",
+                        success: function () {
+                            alert("Se guardo correctamente la póliza(s) al cliente");
+                            location.reload();
+                        },
+                        error: function (e) {
+                            alert(e.responseJSON.ExceptionMessage);
+                        }
+                    });
+                }
             });
 
             $(".DeletePolicyOfClient").click(function () {
