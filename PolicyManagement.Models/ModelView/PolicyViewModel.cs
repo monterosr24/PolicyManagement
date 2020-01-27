@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace PolicyManagement.Models.ModelView
 {
-    public class PolicyViewModel : BaseViewModel
+    public class PolicyViewModel : BaseViewModel<int>
     {
         [Required]
         [Display(Name = "Nombre")]

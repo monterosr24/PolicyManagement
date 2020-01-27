@@ -1,6 +1,6 @@
 ﻿namespace PolicyManagement.Models.Model
 {
-    public class ClientPolicyView: BaseView
+    public class CustomerPoliciesView: BaseView
     {
         public int ClientId { get; set; }
         public int PolicyId { get; set; }

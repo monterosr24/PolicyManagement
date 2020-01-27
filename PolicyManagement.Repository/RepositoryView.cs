@@ -21,7 +21,7 @@ namespace PolicyManagement.Repository
         {
             return _context.Set<TEntity>().Where(predicate).ToList();
         }
-
+        
         public IEnumerable<TEntity> GetAll<TEntity>() where TEntity : BaseView
         {
             return _context.Set<TEntity>().ToList();

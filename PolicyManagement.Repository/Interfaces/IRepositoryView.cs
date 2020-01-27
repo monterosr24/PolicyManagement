@@ -12,6 +12,5 @@ namespace PolicyManagement.Repository.Interfaces
 
         IEnumerable<TEntity> Get<TEntity>(Expression<Func<TEntity, bool>> predicate)
              where TEntity : BaseView;
-        object Get<T>(Expression<Func<object, bool>> predicate);
     }
 }

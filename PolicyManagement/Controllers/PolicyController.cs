@@ -12,6 +12,7 @@ namespace PolicyManagement.Controllers
             policyService = service;
         }
         // GET: Policy
+        [Authorize]
         public ActionResult Index()
         {
             var policies =  policyService.GetAll();
@@ -19,6 +20,7 @@ namespace PolicyManagement.Controllers
         }
 
         // GET: Policy/Details/5
+        [Authorize]
         public ActionResult Details(int id)
         {
             var policy = policyService.GetId(id);
@@ -26,12 +28,14 @@ namespace PolicyManagement.Controllers
         }
 
         // GET: Policy/Create
+        [Authorize]
         public ActionResult Create()
         {
             return View();
         }
-        
+
         // GET: Policy/Edit/5
+        [Authorize]
         public ActionResult Edit(int id)
         {
             var policy = policyService.GetId(id);

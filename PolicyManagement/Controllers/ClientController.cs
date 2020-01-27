@@ -12,6 +12,7 @@ namespace PolicyManagement.Controllers
             clientService = service;  
         }
         // GET: Client
+        [Authorize]
         public ActionResult Index()
         {
             var clients = clientService.GetAll();
@@ -19,6 +20,7 @@ namespace PolicyManagement.Controllers
         }
 
         // GET: Client/Details/5
+        [Authorize]
         public ActionResult Details(int id)
         {
             var client = clientService.GetId(id);
@@ -26,12 +28,14 @@ namespace PolicyManagement.Controllers
         }
 
         // GET: Client/Create
+        [Authorize]
         public ActionResult Create()
         {
             return View();
         }
-        
+
         // GET: Client/Edit/5
+        [Authorize]
         public ActionResult Edit(int id)
         {
             var client = clientService.GetId(id);

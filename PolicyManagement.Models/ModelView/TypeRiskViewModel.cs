@@ -2,7 +2,7 @@
 
 namespace PolicyManagement.Models.ModelView
 {
-    public class TypeRiskViewModel: BaseViewModel
+    public class TypeRiskViewModel: BaseViewModel<int>
     {
         [Display(Name = "Tipo de Riesgo")]
         public string Type { get; set; }

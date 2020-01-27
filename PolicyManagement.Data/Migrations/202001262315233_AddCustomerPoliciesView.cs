@@ -3,11 +3,11 @@ namespace PolicyManagement.Data.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class AddViewClientPolicy : DbMigration
+    public partial class AddCustomerPoliciesView : DbMigration
     {
         public override void Up()
         {
-            Sql(@"CREATE VIEW [dbo].[ClientPolicyView]
+            Sql(@"CREATE VIEW [dbo].[CustomerPoliciesViews]
 	                AS 
 	                SELECT
 		                CONVERT(varchar(50), NEWID()) As Id,
@@ -26,10 +26,10 @@ namespace PolicyManagement.Data.Migrations
 	                INNER JOIN TypeRisk as tp on tp.Id = p.IdTypeRisk
 	                INNER JOIN TypeCovering as tc on tc.Id = p.IdTypeCovering");
         }
-        
+
         public override void Down()
         {
-            Sql(@"DROP VIEW [dbo].[ClientPolicyView]");
+            Sql(@"DROP VIEW [dbo].[CustomerPoliciesViews]");
         }
     }
 }

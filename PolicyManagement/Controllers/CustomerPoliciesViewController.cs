@@ -3,17 +3,19 @@ using System.Web.Mvc;
 
 namespace PolicyManagement.Controllers
 {
-    public class ClientPolicyController : Controller
+    public class CustomerPoliciesViewController : Controller
     {
-        private IClientPolicyViewService clientPolicyViewService;
+        private ICustomerPoliciesViewService clientPolicyViewService;
 
-        public ClientPolicyController(IClientPolicyViewService service)
+        public CustomerPoliciesViewController(ICustomerPoliciesViewService service)
         {
             clientPolicyViewService = service;
+
         }
 
         // GET: ClientPolicy
-        public ActionResult ClientPolicy(int id)
+        [Authorize]
+        public ActionResult Index(int id)
         {
             var result = clientPolicyViewService.Get(x => x.ClientId == id);
             return View(result);

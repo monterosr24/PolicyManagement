@@ -5,10 +5,10 @@ using System.Data.Entity;
 
 namespace PolicyManagement.Services
 {
-    public class ClientPolicyViewService : BaseServiceView<ClientPolicyView, ClientPolicyViewModel>, IClientPolicyViewService
+    public class ClientPolicyService : BaseService<ClientPolicy, ClientPolicyViewModel>, IClientPolicyService
     {
-        public ClientPolicyViewService(DbContext context)
-            :base(context)
+        public ClientPolicyService(DbContext context)
+            : base(context)
         {
 
         }

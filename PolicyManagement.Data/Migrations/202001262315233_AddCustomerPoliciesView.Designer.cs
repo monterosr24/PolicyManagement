@@ -7,13 +7,13 @@ namespace PolicyManagement.Data.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class AddViewClientPolicy : IMigrationMetadata
+    public sealed partial class AddCustomerPoliciesView : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(AddViewClientPolicy));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(AddCustomerPoliciesView));
         
         string IMigrationMetadata.Id
         {
-            get { return "202001262118150_AddViewClientPolicy"; }
+            get { return "202001262315233_AddCustomerPoliciesView"; }
         }
         
         string IMigrationMetadata.Source

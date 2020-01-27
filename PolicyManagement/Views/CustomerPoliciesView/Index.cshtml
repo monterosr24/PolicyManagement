@@ -1,0 +1,168 @@
+﻿@model IEnumerable<PolicyManagement.Models.ModelView.CustomerPoliciesViewModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Cliente - Pólizas</h2>
+
+<p>
+    <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Agregar Póliza</button>
+    <input type="hidden" id="clienteId" value="@(ViewContext.RouteData.Values["Id"])" />
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.NameClient)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LastName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NamePolicy)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Period)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Type)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NameCovering)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Percentage)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NameClient)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LastName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NamePolicy)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Period)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Type)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NameCovering)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Percentage)
+            </td>
+        </tr>
+    }
+
+</table>
+
+
+<div id="myModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Modal Header</h4>
+            </div>
+            <div class="modal-body">
+                <table class="table" id="table-policy">
+                    <tr>
+                        <th>
+                            Nombre
+                        </th>
+                        <th>
+                            Inicio de vigencia de la póliza
+                        </th>
+                        <th>
+                            Periodo de cobertura
+                        </th>
+                        <th>
+                            Precio de la poliza
+                        </th>
+                        <th></th>
+                    </tr>
+
+                </table>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button id="AddPolicy" type="button" class="btn btn-info" data-dismiss="modal">Guardar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@section Scripts
+{
+    <script type="text/javascript">
+        $(function () {
+
+            $.ajax({
+                type: "Get",
+                url: "/api/policy",
+                success: function (e) {
+
+                    CreateHtml(e);
+
+                },
+                error: function (e) {
+                    alert(e.responseJSON.Message);
+                }
+            });
+
+            $("#AddPolicy").click(function () {
+                var data = [];
+                var clienteId = $("#clienteId").val();
+
+                $('input[name="policyCheck"]:checked').each(function () {
+                    var clientPolicy = {};
+                    clientPolicy.ClientId = clienteId;
+                    clientPolicy.PolicyId = $(this).val()
+                    data.push(clientPolicy);
+                });
+
+                $.ajax({
+                    type: "POST",
+                    url: '/api/clientPolicy/list',
+                    data: JSON.stringify(data),
+                    dataType: "json",
+                    contentType: "application/json; charset=utf-8",
+                    success: function () {
+                        alert("Se guardo correctamente la póliza(s) al cliente");
+                        location.reload();
+                    },
+                    error: function (e) {
+                        alert(e.responseJSON.ExceptionMessage);
+                    }
+                });
+
+            });
+        });
+
+        function CreateHtml(e) {
+            var html = "<tr>";
+            $.each(e, function (key, value) {
+                html += "<tr>";
+                html += "<td>" + value.Name + "</td>";
+                html += "<td>" + value.StartPolicy + "</td>";
+                html += "<td>" + value.Period + "</td>";
+                html += "<td>" + value.Price + "</td>";
+                html += "<td><input type='checkbox' name='policyCheck' value='" + value.Id + "'> </td>";
+                html += "</tr>";
+            });
+            $("#table-policy").append(html);
+        }
+    </script>
+}

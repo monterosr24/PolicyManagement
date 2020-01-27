@@ -2,7 +2,7 @@
 
 namespace PolicyManagement.Models.ModelView
 {
-    public class ClientViewModel: BaseViewModel
+    public class ClientViewModel: BaseViewModel<int>
     {
         [Required]
         [Display(Name = "Nombre")]

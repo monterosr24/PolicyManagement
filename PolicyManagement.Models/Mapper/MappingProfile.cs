@@ -12,6 +12,8 @@ namespace PolicyManagement.Models.Mapper
             CreateMap<Policy, PolicyViewModel>().ReverseMap();
             CreateMap<TypeCovering, TypeCoveringViewModel>().ReverseMap();
             CreateMap<TypeRisk, TypeRiskViewModel>().ReverseMap();
+            CreateMap<CustomerPoliciesView, CustomerPoliciesViewModel>().ReverseMap();
+            CreateMap<ClientPolicy, ClientPolicyViewModel>().ReverseMap();
         }
     }
 }
