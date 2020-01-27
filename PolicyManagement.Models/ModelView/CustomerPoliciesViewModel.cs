@@ -7,6 +7,7 @@ namespace PolicyManagement.Models.ModelView
 
         public int ClientId { get; set; }
         public int PolicyId { get; set; }
+        public int ClientePolicyId { get; set; }
 
         [Display(Name = "Nombre Cliente")]
         public string NameClient { get; set; }

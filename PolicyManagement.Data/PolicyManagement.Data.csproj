@@ -68,6 +68,10 @@
     <Compile Include="Migrations\202001262315233_AddCustomerPoliciesView.Designer.cs">
       <DependentUpon>202001262315233_AddCustomerPoliciesView.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202001270141121_UpdateViewClientPolicy.cs" />
+    <Compile Include="Migrations\202001270141121_UpdateViewClientPolicy.Designer.cs">
+      <DependentUpon>202001270141121_UpdateViewClientPolicy.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -94,6 +98,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202001262315233_AddCustomerPoliciesView.resx">
       <DependentUpon>202001262315233_AddCustomerPoliciesView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001270141121_UpdateViewClientPolicy.resx">
+      <DependentUpon>202001270141121_UpdateViewClientPolicy.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

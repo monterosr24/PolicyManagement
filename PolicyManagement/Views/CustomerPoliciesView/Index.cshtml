@@ -60,6 +60,9 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Percentage)
             </td>
+            <td>
+                <a class="DeletePolicyOfClient" data-ClientePolicy-id="@($"{item.ClientePolicyId}")">Delete</a>
+            </td>
         </tr>
     }
 
@@ -108,14 +111,11 @@
 {
     <script type="text/javascript">
         $(function () {
-
             $.ajax({
                 type: "Get",
                 url: "/api/policy",
                 success: function (e) {
-
                     CreateHtml(e);
-
                 },
                 error: function (e) {
                     alert(e.responseJSON.Message);
@@ -148,6 +148,23 @@
                     }
                 });
 
+            });
+
+            $(".DeletePolicyOfClient").click(function () {
+                var opcion = confirm("Desea eliminar la Póliza del Cliente");
+                if (opcion == true) {
+                    $.ajax({
+                        type: "Delete",
+                        url: `/api/clientPolicy/${this.dataset.clientepolicyId}`,
+                        success: function () {
+                            alert("Se eliminó correctamente la póliza del cliente");
+                            location.reload();
+                        },
+                        error: function (e) {
+                            alert(e.responseJSON.Message);
+                        }
+                    });
+                }
             });
         });
 
